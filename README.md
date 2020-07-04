@@ -4,7 +4,7 @@
 </div>
 
 # AngularTestApp
-My personal test of [Flutter](https://angular.io) following the [Openclassroom tutorial](https://openclassrooms.com/fr/courses/4668271-developpez-des-applications-web-avec-angular).
+My personal test of [Angular](https://angular.io) following the [Openclassroom tutorial](https://openclassrooms.com/fr/courses/4668271-developpez-des-applications-web-avec-angular).
 
 
 ## Getting Started
