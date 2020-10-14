@@ -1,3 +1,13 @@
 <h2>Authentification</h2>
-<button class="btn btn-success" *ngIf="!authStatus" (click)="onSignIn()">Se connecter</button>
+<form *ngIf="!authStatus" [formGroup]="userForm" (ngSubmit)="onSignIn()">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" formControlName="email" id="email" class="form-control" placeholder="" aria-describedby="emailHelpId">
+    </div>
+    <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" class="form-control" formControlName="password" id="password" placeholder="">
+    </div>
+    <button type="submit" class="btn btn-success">Se connecter</button>
+</form>
 <button class="btn btn-danger" *ngIf="authStatus" (click)="onSignOut()">Se déconnecter</button>

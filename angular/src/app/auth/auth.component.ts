@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-auth',
@@ -10,15 +11,22 @@ import { Router } from '@angular/router';
 export class AuthComponent implements OnInit {
 
     authStatus: boolean;
+    userForm: FormGroup;
 
-    constructor(private authService: AuthService, private router: Router) { }
+    constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
 
     ngOnInit() {
         this.authStatus = this.authService.isAuth;
+        this.userForm = this.formBuilder.group({
+            email: ['', [Validators.required, Validators.email]],
+            password: ['', Validators.required]
+        });
     }
 
     onSignIn() {
-        this.authService.signIn().then(
+        const formValue = this.userForm.value;
+        console.log(`mail: ${formValue['email']} / password: ${formValue['password']}`);
+        this.authService.signIn(formValue['email'], formValue['password']).then(
             () => {
                 console.log('Sign in successful!');
                 this.authStatus = this.authService.isAuth;

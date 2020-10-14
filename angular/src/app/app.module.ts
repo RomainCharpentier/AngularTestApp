@@ -18,6 +18,13 @@ import { UserService } from './services/user.service';
 import { NewUserComponent } from './new-user/new-user.component';
 import { HttpClientModule } from '@angular/common/http';
 
+// Firebase services + environment module
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+
+
 const appRoutes: Routes = [
     { path: 'appareils', canActivate: [AuthGuard], component: AppareilViewComponent },
     { path: 'appareils/:id', canActivate: [AuthGuard], component: SingleAppareilComponent },
@@ -47,7 +54,10 @@ const appRoutes: Routes = [
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        RouterModule.forRoot(appRoutes)
+        RouterModule.forRoot(appRoutes),
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireAuthModule,
+        AngularFirestoreModule,
     ],
     providers: [
         AppareilService,

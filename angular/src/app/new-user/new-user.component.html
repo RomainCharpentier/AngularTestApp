@@ -22,7 +22,12 @@
     <div formArrayName="hobbies">
       <h3>Vos hobbies</h3>
       <div class="form-group" *ngFor="let hobbyControl of getHobbies().controls; let i = index">
-        <input type="text" class="form-control" [formControlName]="i">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" [formControlName]="i">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-danger" (click)="onRemoveHobby(i)">Supprimer</button>
+          </span>
+        </div>
       </div>
       <button type="button" class="btn btn-success" (click)="onAddHobby()">Ajouter un hobby</button>
     </div>

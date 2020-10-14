@@ -14,8 +14,8 @@ export class NewUserComponent implements OnInit {
     userForm: FormGroup;
 
     constructor(private formBuilder: FormBuilder,
-        private userService: UserService,
-        private router: Router) { }
+                private userService: UserService,
+                private router: Router) { }
 
     ngOnInit() {
         this.initForm();
@@ -51,6 +51,12 @@ export class NewUserComponent implements OnInit {
     onAddHobby() {
         const newHobbyControl = this.formBuilder.control(null, Validators.required);
         this.getHobbies().push(newHobbyControl);
+    }
+
+    onRemoveHobby(i: number) {
+        if (i >= 0 && i < this.getHobbies().length) {
+            this.getHobbies().removeAt(i);
+        }
     }
 
 }

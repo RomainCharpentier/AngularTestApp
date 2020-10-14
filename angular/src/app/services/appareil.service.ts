@@ -36,7 +36,7 @@ export class AppareilService {
               this.emitAppareilSubject();
             },
             (error) => {
-              console.log('Erreur ! : ' + error);
+              console.log('Erreur ! : ' + JSON.stringify(error));
             }
           );
     }
@@ -49,7 +49,7 @@ export class AppareilService {
                     console.log('Enregistrement terminé !');
                 },
                 (error) => {
-                    console.log('Erreur ! : ' + error);
+                    console.log('Erreur ! : ' + JSON.stringify(error));
                 }
             );
     }
@@ -68,14 +68,14 @@ export class AppareilService {
     }
 
     switchOnAll() {
-        for (let appareil of this.appareils) {
+        for (const appareil of this.appareils) {
             appareil.status = 'allumé';
         }
         this.emitAppareilSubject();
     }
 
     switchOffAll() {
-        for (let appareil of this.appareils) {
+        for (const appareil of this.appareils) {
             appareil.status = 'éteint';
             this.emitAppareilSubject();
         }
