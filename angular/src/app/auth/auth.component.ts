@@ -25,12 +25,12 @@ export class AuthComponent implements OnInit {
 
     onSignIn() {
         const formValue = this.userForm.value;
-        console.log(`mail: ${formValue['email']} / password: ${formValue['password']}`);
         this.authService.signIn(formValue['email'], formValue['password']).then(
             () => {
                 console.log('Sign in successful!');
                 this.authStatus = this.authService.isAuth;
                 this.router.navigate(['appareils']);
+                localStorage.setItem('token', 'TODO');
             }
         );
     }

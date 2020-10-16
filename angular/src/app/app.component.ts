@@ -10,7 +10,7 @@ import 'rxjs/add/observable/interval';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-    secondes: number;
+    secondes = 0;
     counterSubscription: Subscription;
     isAuth = false;
     appareils: any[];

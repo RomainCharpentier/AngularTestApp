@@ -13,7 +13,7 @@ export class EditAppareilComponent implements OnInit {
     defaultOnOff = 'éteint';
 
     constructor(private appareilService: AppareilService,
-        private router: Router) { }
+                private router: Router) { }
 
     ngOnInit() {
     }

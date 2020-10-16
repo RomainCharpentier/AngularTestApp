@@ -23,6 +23,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { HighlightDirective } from './highlight/highlight.directive';
 
 
 const appRoutes: Routes = [
@@ -32,7 +33,7 @@ const appRoutes: Routes = [
     { path: 'auth', component: AuthComponent },
     { path: 'users', component: UserListComponent },
     { path: 'new-user', component: NewUserComponent },
-    { path: '', component: AppareilViewComponent },
+    { path: '', canActivate: [AuthGuard], component: AppareilViewComponent },
     { path: 'not-found', component: FourOhFourComponent },
     { path: '**', redirectTo: 'not-found' }
 ];
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
         FourOhFourComponent,
         EditAppareilComponent,
         UserListComponent,
-        NewUserComponent
+        NewUserComponent,
+        HighlightDirective
     ],
     imports: [
         BrowserModule,
