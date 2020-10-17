@@ -13,7 +13,6 @@ import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.cloud.FirestoreClient;
 import com.test.AngularTestApp.model.Device;
-import com.test.AngularTestApp.model.User;
 
 @Component
 public class DeviceService {

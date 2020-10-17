@@ -21,7 +21,7 @@ public class AngularTestAppApplication {
         SpringApplication.run(AngularTestAppApplication.class, args);
         try {
             FirebaseOptions options = new FirebaseOptions.Builder()
-                    .setCredentials(GoogleCredentials.fromStream(new ClassPathResource("/serviceAccountKey.json").getInputStream()))
+                    .setCredentials(GoogleCredentials.fromStream(new ClassPathResource("./serviceAccountKey.json").getInputStream()))
                     .setDatabaseUrl(FB_BASE_URL)
                     .build();
             if(FirebaseApp.getApps().isEmpty()) { //<--- check with this line
