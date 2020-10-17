@@ -87,29 +87,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!-- Firebase -->
-		<dependency>
-			<groupId>com.google.firebase</groupId>
-			<artifactId>firebase-admin</artifactId>
-			<version>6.10.0</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.google.cloud/google-cloud-firestore -->
-		<dependency>
-			<groupId>com.google.cloud</groupId>
-			<artifactId>google-cloud-firestore</artifactId>
-			<version>1.63.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.api-client</groupId>
-			<artifactId>google-api-client</artifactId>
-			<version>1.30.11</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.google.auth/google-auth-library-oauth2-http -->
-		<dependency>
-			<groupId>com.google.auth</groupId>
-			<artifactId>google-auth-library-oauth2-http</artifactId>
-			<version>0.21.1</version>
-		</dependency>
 	</dependencies>
 
 	<build>

@@ -35,7 +35,7 @@ public class DeviceController {
 	
 	@PostMapping(path = Links.DEVICE_ADD)
 	public ResponseEntity<?> saveDevice(@RequestBody Device user) throws InterruptedException, ExecutionException {
-        String resource = deviceService.saveDevice(user);
+        Device resource = deviceService.saveDevice(user);
         return ResponseEntity.ok(resource);
     }
 }

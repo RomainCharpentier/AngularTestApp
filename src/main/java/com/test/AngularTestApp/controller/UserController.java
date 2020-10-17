@@ -33,13 +33,13 @@ public class UserController {
 	
 	@PostMapping(path = Links.USER_ADD)
 	public ResponseEntity<?> saveUser(@RequestBody User user) throws InterruptedException, ExecutionException {
-        String resource = userService.saveUser(user);
+        User resource = userService.saveUser(user);
         return ResponseEntity.ok(resource);
     }
 	
 	@PostMapping(path = Links.USER_AUTH)
 	public ResponseEntity<?> authUser(@RequestBody User user) throws InterruptedException, ExecutionException {
-        String resource = userService.saveUser(user);
+        User resource = userService.saveUser(user);
         return ResponseEntity.ok(resource);
     }
 }
